@@ -4,9 +4,9 @@
 
 Temperature is measured every 15 minutes and broadcast via a LoRa transceiver. Sensor node hardware:
 
-- [BlueDot TMP117](https://www.bluedot.space/products/tmp117/) sensor board
-- Arduino compatible [Heltec CubeCell AB01](https://heltec.org/proudct_center/lora/cubecell/) board with ASR650x MCU/LoRa module
-  (PSoC 4100S Plus and Semtech SX1262 LoRa transceiver).
+- BlueDot TMP117 sensor board (no longer available). Use a better alternative: [Adafruit TMP116](https://www.adafruit.com/product/4821?srsltid=AfmBOoq--AR38QMIiaH3DP2tLxGJdLStaPRV6gN7Z23IPMsg9kn7z4i6)
+- Arduino compatible [Heltec CubeCell AB01](https://heltec.org/project/htcc-ab01-v2/) board with ASR650x MCU/LoRa module
+  (PSoC 4100S Plus and Semtech SX1262 LoRa transceiver). This project is made with Version 1 board.
 
 Power-save considerations:
 
