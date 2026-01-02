@@ -1,4 +1,4 @@
-# TMP117
+# LoRa Sensor Node
 
 ## Low power, high accuracy temperature sensor LoRa node
 
@@ -80,20 +80,20 @@ A header specifies what data is transmitted. Headers are 1 to 4 bytes long, depe
  - Can be followed by a 1-3 byte parameter value
  - Min/max payload: 1 to 4 bytes
 
-![](http://tweeler.nl/reg0.png)  
-![](http://tweeler.nl/reg1.png)
+![](doc/pngs/reg0.png)  
+![](doc/pngs/reg1.png)
 
 #### 1. Data header
 
 A data header has ERR bit [6:6] set to 0. The example below shows a data header for sending a single, 2-byte parameter:
 
-![](http://tweeler.nl/reg2.png)  
-![](http://tweeler.nl/reg3.png)
+![](doc/pngs/reg2.png)  
+![](doc/pngs/reg3.png)
 
 When the EXT-bit [7:7] is set, the header is extended with the next payload byte. Parameter fields may thus span multiple bytes in the data header.
 A Parameter Identifier (PID) represents all parameter fields in the data header. Bits [7:6] of each PID-byte are zero. Example of a 16-bit PDE data header:  
 
-![](http://tweeler.nl/reg4.png)
+![](doc/pngs/reg4.png)
 
 Parameter payload sequence of this PID: `<p0[7:0]> <p1[7:0]><p1[15:8]><p1[23:16]> <p2[7:0]><p2[15:8]> <p3[7:0]><p3[15:8]> <p5[7:0]><p5[15:8]><p5[23:16]>`  
 Note that parameter p4 is not present.
@@ -102,7 +102,7 @@ Note that parameter p4 is not present.
 
 An error header consists of a 1-byte header with ERR-bit [6:6] set to 1. Other fields are a 4-bit error code field, a 2-bit error extension field and an EXT [7:7] bit.
 
-![](http://tweeler.nl/reg5.png)
+![](doc/pngs/reg5.png)
 
 When the ERR-bit [6:6] is set, the PDE contains 4 error flags [3:0], and a 2-bit extension size field [5:4]. The extension size field indicates the number of bytes following the error header. The extension bytes are used to indicate faulty sensors.
 
@@ -114,10 +114,10 @@ When the EXT [7:7] bit is 1, transmission of the error message is postponed unti
 A faulty sensor will cause a sensor time-out condition and a 'no data' error being issued. The error won't be sent until the next data transmission, which may take until a heart-beat is sent after 24h when there is no data to be sent.
 
 Here an example of an error with a 1-byte extension, followed by a regular data header and 3 data bytes:  
-![](http://tweeler.nl/reg6.png)
-![](http://tweeler.nl/reg7.png)
-![](http://tweeler.nl/reg8.png)
-![](http://tweeler.nl/reg9.png)
+![](doc/pngs/reg6.png)
+![](doc/pngs/reg7.png)
+![](doc/pngs/reg8.png)
+![](doc/pngs/reg9.png)
 
 ### Implementation details
 
