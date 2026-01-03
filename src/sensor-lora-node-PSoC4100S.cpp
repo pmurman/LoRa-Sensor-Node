@@ -75,7 +75,7 @@ CubeCell_NeoPixel Pixels(1, RGB, NEO_GRB + NEO_KHZ800);
  * @brief Initialization of sensors, LoRa
  */
 void setup() {
-CySysWdtEnable();
+  CySysWdtEnable();
 #if _TO_
   Serial.begin(115200);
 #endif
@@ -260,7 +260,7 @@ void TempSensor1Ready(void) {
 
 /**
  * @brief Enable transmission of available data when not all sensors finished in time
- * (Attempts to use WDT IRQs instead of TimerEvent_t didn't succeed - enexpected behavior)
+ * (Attempts to use WDT IRQs instead of TimerEvent_t didn't succeed - unexpected behavior)
  */
 void Timeout(void) {
   // try to 'fix' sensors that did not respond
