@@ -175,6 +175,9 @@ void Payload::out(void) {
 }
 
 char * Payload::convert2B64(uint8_t * raw, uint8_t * rawEnd) {
+  if (rawEnd - raw > MAX_PAYLOAD)
+    rawEnd = raw + MAX_PAYLOAD;
+
   uint padding = 0;
   // add empty octets until raw packet contains multiple of 3 octets
   while ((rawEnd - raw) % 3) {
