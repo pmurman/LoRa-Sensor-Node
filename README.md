@@ -1,12 +1,18 @@
 # LoRa Sensor Node
 
-2026 Update: 4 temperature sensor nodes were build and deployed in 2022, inside our home and
-on our 2.3ha property. Overall they worked quite well -still do-, although the radio connection
-isn't very reliable. That's mainly because one node is programmed to serve as a
-"poor man's gateway". It's connected via serialUSB to an old 2010 Mac mini running a tiny script
-uploading data packets to PHP/MySQL (and Node.js/Postres) doing the data processing.  
+2026 Update. In 2022, four temperature sensors were built and installed in our house and on our 2.3-hectare property.
+Overall they worked quite well -and still do-, although the radio connection isn't very reliable.
+That's mainly because one node was re-programmed to serve as a "poor man's gateway". 
+It receives data packets from the other nodes, decodes them, and uploads them via the USBserial port to an old Mac mini
+running a tiny script that POSTs the packets to PHP/MySQL (and Node.js/Poster) for further processing and storage.
 
 ![](doc/pngs/IMG_3092.png) 
+
+Time for a much-needed upgrade to make things more robust and maintainable:
+
+- install commercial outdoor LoRaWan gateway (likely from Mikrotik);
+- replace home-brew backend software and Svelte WebApp by ChirpStack + Home Assistent + Grafana;
+- update sensor nodes to use LoRaWan instead of plain LoRa.
 
 ## Low power, high accuracy temperature sensor LoRa node
 
@@ -20,7 +26,7 @@ Power-save considerations:
 
 - only send data when changed since the last measurement;
 - keep hardware components in sleep/idle mode when not used;
-- use LoRa MAC layer instead of full LoRaWAN protocol for radio communications (dramatic reduction of time on air)
+- use LoRa MAC layer instead of full LoRaWAN protocol for radio communications (dramatic reduction of time on air).
 
 Signal wiring between BlueDot TMP117 sensor board and Heltec CubeCell AB01 dev board:  
 &nbsp;&nbsp;&nbsp;BlueDot TMP117 I2C &larr;&rarr; AB01 SDA/SCL  
