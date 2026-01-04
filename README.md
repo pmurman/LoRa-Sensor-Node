@@ -1,12 +1,20 @@
 # LoRa Sensor Node
 
+2026 Update: 4 temperature sensor nodes were build and deployed in 2022, inside our home and
+on our 2.3ha property. Overall they worked quite well -still do-, although the radio connection
+isn't very reliable. That's mainly because one node is programmed to serve as a
+"poor man's gateway". It's connected via serialUSB to an old 2010 Mac mini running a tiny script
+uploading data packets to PHP/MySQL (and Node.js/Postres) doing the data processing.  
+
+![](doc/pngs/sensornode.png) 
+
 ## Low power, high accuracy temperature sensor LoRa node
 
 Temperature is measured every 15 minutes and broadcast via a LoRa transceiver. Sensor node hardware:
 
 - BlueDot TMP117 sensor board (no longer available). Use a better alternative: [Adafruit TMP117](https://www.adafruit.com/product/4821?srsltid=AfmBOoq--AR38QMIiaH3DP2tLxGJdLStaPRV6gN7Z23IPMsg9kn7z4i6)
 - Arduino compatible [Heltec CubeCell AB01](https://heltec.org/project/htcc-ab01-v2/) board with ASR650x MCU/LoRa module
-  (PSoC 4100S Plus and Semtech SX1262 LoRa transceiver). This project is made with Version 1 board.
+  (PSoC 4100S Plus and Semtech SX1262 LoRa transceiver). This project is made with Version 1.2 board.
 
 Power-save considerations:
 
