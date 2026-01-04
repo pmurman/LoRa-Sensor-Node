@@ -11,9 +11,11 @@
  *
  * Collect temperature data using a BlueDot TMP117 sensor breakout at regular intervals
  * (typically every 15 minutes), and broadcast data via a LoRa radio.
+ * LoRa module: Heltec CubeCell AB01 Dev-Board v1.2.
+ * Temperature sensor module: BlueDot TMP117 sensor breakout.
  * To reduce power consumption, data is only sent if it has changed since the previous
  * sample sent.
- * This version supports only LoRa - not LoRaWAN - in the absence of a LoRaWAN Gateway.
+ * This version supports only LoRa - not LoRaWAN.
  *
  * Features:
  * - Low power: only wakes up from deep sleep to:
