@@ -4,7 +4,7 @@
 Overall they worked quite well -and still do-, although the radio connection isn't very reliable.
 That's mainly because one node was re-programmed to serve as a "poor man's gateway". 
 It receives data packets from the other nodes, decodes them, and uploads them via the USBserial port to an old Mac mini
-running a tiny script that POSTs the packets to PHP/MySQL (and Node.js/Poster) for further processing and storage.
+running a tiny script that POSTs the packets to PHP/MySQL (and Node.js/Postgres) for further processing and storage.
 
 ![](doc/pngs/IMG_3092.png) 
 
