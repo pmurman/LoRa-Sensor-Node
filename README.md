@@ -14,6 +14,8 @@ Time for a much-needed upgrade to make things more robust and maintainable:
 - replace home-brew backend software and Svelte WebApp by ChirpStack + Home Assistent + Grafana;
 - update sensor nodes to use LoRaWan instead of plain LoRa.
 
+But first more about the sensor nodes project.
+
 ## Low power, high accuracy temperature sensor LoRa node
 
 Temperature is measured every 15 minutes and broadcast via a LoRa transceiver. Sensor node hardware:
@@ -84,15 +86,15 @@ Errors where normal operation is likely compromized are sent when they are detec
 A header specifies what data is transmitted. Headers are 1 to 4 bytes long, depending on the number and size of the data parameters. There are two types of headers:
 
 - Data headers
--  1 to 4 bytes
- - Allow dynamic parameter passing (eg. only include data that has changed)
- - One-, two- or three-byte parameter encoding
- - Up to 12 parameter values
- - Min/max payload: 2 to 40 bytes
+  -  1 to 4 bytes
+  - Allow dynamic parameter passing (eg. only include data that has changed)
+  - One-, two- or three-byte parameter encoding
+  - Up to 12 parameter values
+  - Min/max payload: 2 to 40 bytes
 - Error headers (1 byte):
- - 1 byte
- - Can be followed by a 1-3 byte parameter value
- - Min/max payload: 1 to 4 bytes
+  - 1 byte
+  - Can be followed by a 1-3 byte parameter value
+  - Min/max payload: 1 to 4 bytes
 
 ![](doc/pngs/reg0.png)  
 ![](doc/pngs/reg1.png)
