@@ -6,7 +6,7 @@ isn't very reliable. That's mainly because one node is programmed to serve as a
 "poor man's gateway". It's connected via serialUSB to an old 2010 Mac mini running a tiny script
 uploading data packets to PHP/MySQL (and Node.js/Postres) doing the data processing.  
 
-![](doc/pngs/sensornode.png) 
+![](doc/pngs/IMG_3092.png) 
 
 ## Low power, high accuracy temperature sensor LoRa node
 
